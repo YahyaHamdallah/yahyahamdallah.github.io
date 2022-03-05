@@ -31,6 +31,8 @@ a:active{
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
+  object-fit: cover;
+  
 
   /*
     fixed = parallax
@@ -42,7 +44,9 @@ a:active{
 
 .pimg1{
   background-image:url('/Art/art\ \(13\).jpg');
-  min-height:100%;
+  width: 100%;
+  height: 100%; 
+  object-fit: contain;
 }
 .pimg2{
   background-image:url('../art\ \(1\).jpg');
@@ -149,7 +153,7 @@ a:active{
 }
 
 @media(max-width:568px){
-  .pimg1, .pimg2, .pimg3, .pimg4, .pimg6, .pimg7, .pimg8{
+  .pimg1, .pimg2, .pimg3, .pimg4, .pimg6, .pimg7, .pimg8, .pimg9, .pimg10, .pimg11, .pimg12, .pimg13, .pimg14, .pimg15, .pimg16, .pimg17, .pimg18{
     background-attachment:scroll;
   }
 }
