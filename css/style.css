@@ -162,7 +162,7 @@ a:active{
 }
 
 
-@media (max-width: 991px)
+@media (max-width: 100%)
 {
   .showcase,
   .showcase header
