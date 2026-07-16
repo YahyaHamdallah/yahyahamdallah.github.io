@@ -1,3 +1,5 @@
+/* Base */
+
 :root {
   --paper: #e9dfc9;
   --ink: #161310;
@@ -37,6 +39,8 @@ body:has(.poems-index-stage) {
 body:has(.poem-stage .flashlight-poem-body) {
   background: linear-gradient(135deg, #070706, #010101);
 }
+
+/* Navigation */
 
 .site-nav {
   position: relative;
@@ -128,6 +132,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   box-shadow: 5px 10px 20px rgba(30, 22, 12, 0.3);
 }
 
+/* Poem Index Navigation */
+
 .poem-title-bar {
   position: sticky;
   top: 0;
@@ -164,6 +170,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   background: #14110e;
   color: #efe8d7;
 }
+
+/* Layout Shells */
 
 .stage {
   width: min(100%, 920px);
@@ -241,6 +249,8 @@ body:has(.poem-stage .flashlight-poem-body) {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23noise)' opacity='0.55'/%3E%3C/svg%3E");
   mix-blend-mode: multiply;
 }
+
+/* Homepage */
 
 .home-page {
   display: grid;
@@ -434,6 +444,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   background: #e8ddbf;
 }
 
+/* Photo Journals */
+
 .photo-page {
   width: 100%;
   padding: clamp(26px, 5vw, 58px) 0;
@@ -593,6 +605,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   transform: translateY(-50%) scale(1.08);
 }
 
+/* Collection Pages */
+
 .essays-page,
 .collection-page {
   width: 100%;
@@ -683,6 +697,8 @@ body:has(.poem-stage .flashlight-poem-body) {
 .collection-content .entry-link:focus-visible::before {
   opacity: 1;
 }
+
+/* Exploration */
 
 .exploration-page {
   overflow: hidden;
@@ -862,6 +878,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   transform: rotate(-1.4deg);
 }
 
+/* Essay Index */
+
 .artwork-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -988,6 +1006,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   margin-top: 14px;
 }
 
+/* Essay Pages */
+
 .essay-page {
   display: grid;
   width: min(100%, 1240px);
@@ -1073,6 +1093,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   font-size: clamp(20px, 2.7vw, 32px) !important;
   line-height: 1.1 !important;
 }
+
+/* Formal Analysis Essay */
 
 .essay-side-figure,
 .essay-main-figure {
@@ -1190,6 +1212,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   line-height: 1.22 !important;
 }
 
+/* Wide Screens */
+
 @media (min-width: 1280px) {
   .site-nav {
     width: min(100%, 1120px);
@@ -1199,6 +1223,8 @@ body:has(.poem-stage .flashlight-poem-body) {
     width: min(100%, 1320px);
   }
 }
+
+/* Tablet */
 
 @media (max-width: 960px) {
   body:has(.poems-index-stage) {
@@ -1327,6 +1353,8 @@ body:has(.poem-stage .flashlight-poem-body) {
 .category-link:nth-child(3) {
   transform: rotate(-2deg);
 }
+
+/* Poems */
 
 .poem {
   position: absolute;
@@ -1500,6 +1528,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   line-height: 1.1;
 }
 
+/* Can't Hold On Poem */
+
 .hold-page {
   background:
     repeating-linear-gradient(to bottom, transparent 0 40px, rgba(36, 72, 112, 0.16) 40px 41px),
@@ -1672,6 +1702,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   transform: rotate(14deg);
 }
 
+/* Breath Poem */
+
 .breath-page {
   background:
     linear-gradient(90deg, rgba(22, 19, 16, 0.035), transparent 18%, transparent 82%, rgba(22, 19, 16, 0.035)),
@@ -1798,6 +1830,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   right: 36%;
 }
 
+/* Animations */
+
 @keyframes pageBreath {
   0%,
   100% {
@@ -1819,6 +1853,8 @@ body:has(.poem-stage .flashlight-poem-body) {
     transform: scale(var(--breath-scale, 1.09));
   }
 }
+
+/* Cutout Poem */
 
 .line {
   display: flex;
@@ -1967,6 +2003,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   }
 }
 
+/* Reduced Motion */
+
 @media (prefers-reduced-motion: reduce) {
   .home-page .category-link,
   .breath-page,
@@ -1979,6 +2017,8 @@ body:has(.poem-stage .flashlight-poem-body) {
     max-width: 100%;
   }
 }
+
+/* Phone */
 
 @media (max-width: 720px) {
   body {
