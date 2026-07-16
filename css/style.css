@@ -704,7 +704,7 @@ body:has(.poem-stage .flashlight-poem-body) {
 
 .exploration-content {
   align-content: center;
-  gap: clamp(30px, 5vw, 54px);
+  gap: clamp(18px, 3vw, 32px);
   min-height: min(700px, calc(100vh - 220px));
 }
 
@@ -788,21 +788,21 @@ body:has(.poem-stage .flashlight-poem-body) {
 
 .exploration-photo-stack img:nth-child(1) {
   left: 4%;
-  top: 11%;
+  top: 12%;
   z-index: 2;
   transform: rotate(-8deg);
 }
 
 .exploration-photo-stack img:nth-child(2) {
   left: 29%;
-  top: 2%;
+  top: 3%;
   z-index: 3;
   transform: rotate(5deg);
 }
 
 .exploration-photo-stack img:nth-child(3) {
   left: 49%;
-  top: 20%;
+  top: 21%;
   z-index: 1;
   transform: rotate(11deg);
 }
@@ -832,8 +832,9 @@ body:has(.poem-stage .flashlight-poem-body) {
   position: relative;
   z-index: 4;
   display: grid;
-  justify-items: start;
+  justify-items: center;
   gap: 18px;
+  text-align: center;
 }
 
 .exploration-card-title {
@@ -858,7 +859,7 @@ body:has(.poem-stage .flashlight-poem-body) {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   box-shadow: 3px 6px 14px rgba(30, 22, 12, 0.24);
-  transform: rotate(1deg);
+  transform: rotate(-1.4deg);
 }
 
 .artwork-grid {
