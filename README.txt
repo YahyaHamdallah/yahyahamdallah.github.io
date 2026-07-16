@@ -14,6 +14,7 @@ File organization:
 - exploration/ contains the exploration landing page and individual exploration pages.
 - exploration/NewMexico/ contains the New Mexico exploration page, source HEIC photos, and converted web images.
 - assets/art-history/ contains downloaded artwork images for art history essays.
+- assets/vases/ contains homepage vase artwork.
 - css/ contains shared styling for the whole site.
 - js/ contains shared scripts for the whole site.
 
