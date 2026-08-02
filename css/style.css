@@ -2114,6 +2114,8 @@ body:has(.poem-stage .flashlight-poem-body) {
 
   .hold-poem p {
     min-height: 36px;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .hold-stanza {
@@ -2121,7 +2123,11 @@ body:has(.poem-stage .flashlight-poem-body) {
   }
 
   .hold-poem-body .poem-header h1 {
-    font-size: clamp(30px, 10vw, 42px);
+    max-width: 100%;
+    font-size: clamp(28px, 9vw, 42px);
+    line-height: 0.95;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .hold-page {
