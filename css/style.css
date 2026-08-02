@@ -2108,6 +2108,18 @@ body:has(.poem-stage .flashlight-poem-body) {
     line-height: 36px;
   }
 
+  .hold-poem-body {
+    padding-bottom: 36px;
+  }
+
+  .hold-poem p {
+    min-height: 36px;
+  }
+
+  .hold-stanza {
+    margin-bottom: 36px;
+  }
+
   .hold-poem-body .poem-header h1 {
     font-size: clamp(30px, 10vw, 42px);
   }
@@ -2128,7 +2140,7 @@ body:has(.poem-stage .flashlight-poem-body) {
   }
 
   .hold-line {
-    margin-bottom: 36px;
+    margin-bottom: 0;
   }
 
   .held-place {
@@ -2156,7 +2168,7 @@ body:has(.poem-stage .flashlight-poem-body) {
   .hold-line.nothing {
     font-size: inherit;
     line-height: 36px;
-    margin-bottom: 36px;
+    margin-bottom: 0;
   }
 
   .still-here {
