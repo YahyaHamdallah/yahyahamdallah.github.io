@@ -291,7 +291,7 @@ body:has(.poem-stage .flashlight-poem-body) {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: clamp(42px, 7vh, 96px);
+  gap: clamp(90px, 12vh, 180px);
   animation: vaseColumnScroll 26s linear infinite;
 }
 
