@@ -195,6 +195,10 @@ body:has(.poem-stage .flashlight-poem-body) {
   gap: clamp(18px, 3vw, 34px);
 }
 
+.poems-index-stage #familiar {
+  order: 99;
+}
+
 .essays-stage,
 .collection-stage {
   width: min(100%, 1240px);

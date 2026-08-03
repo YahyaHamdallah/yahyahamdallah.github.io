@@ -196,7 +196,7 @@ if (poemEntries.length && poemLinks.length) {
     });
   };
 
-  setActivePoem(poems[0].id);
+  setActivePoem(poemLinks[0].dataset.poemLink || poems[0].id);
 
   if ('IntersectionObserver' in window) {
     const visiblePoems = new Map();
