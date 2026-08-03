@@ -375,6 +375,18 @@ body:has(.poem-stage .flashlight-poem-body) {
   box-shadow: 3px 6px 14px var(--shadow);
 }
 
+.home-page .home-content h1 {
+  padding: 16px 22px 20px;
+  background: #e8ddbf;
+  box-shadow: 3px 6px 14px var(--shadow);
+}
+
+.home-page .home-content h1 span {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
 .home-content h1 span:first-child,
 .category-content h1 span:first-child {
   transform: rotate(-2deg);
