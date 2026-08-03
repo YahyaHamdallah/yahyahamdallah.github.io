@@ -2059,6 +2059,20 @@ body:has(.poem-stage .flashlight-poem-body) {
     padding: 10px 12px 12px;
   }
 
+  .home-page {
+    width: 100%;
+    min-height: calc(100vh - 86px);
+    aspect-ratio: auto;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .home-page .paper-noise {
+    display: none;
+  }
+
   body:has(.poems-index-stage) {
     gap: 18px;
   }
@@ -2113,6 +2127,7 @@ body:has(.poem-stage .flashlight-poem-body) {
 
   .poem-body {
     width: 100%;
+    min-height: 0;
     padding: 22px 18px;
   }
 
