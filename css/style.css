@@ -1355,18 +1355,6 @@ body:has(.poem-stage .flashlight-poem-body) {
     order: 2;
   }
 
-  .poem-page.familiar-page {
-    padding-bottom: 0;
-  }
-
-  .familiar-page .poem-body {
-    padding-bottom: 0;
-  }
-
-  .familiar-page .poem .line.ending {
-    margin-bottom: 0;
-  }
-
   .poem-artwork {
     order: 1;
   }
