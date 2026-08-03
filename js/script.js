@@ -223,3 +223,27 @@ if (poemEntries.length && poemLinks.length) {
     poemEntries.forEach((entry) => observer.observe(entry));
   }
 }
+
+const vaseBackdrop = document.querySelector('.home-vase-backdrop');
+
+if (vaseBackdrop) {
+  const vaseColumns = Array.from(vaseBackdrop.querySelectorAll('.home-vase-column'));
+  const vaseTracks = vaseColumns.map((column) => column.querySelector('.home-vase-track'));
+  const vases = vaseTracks.flatMap((track) => Array.from(track.children));
+  const mobileLayout = window.matchMedia('(max-width: 720px)');
+
+  const arrangeVases = () => {
+    const visibleColumnCount = mobileLayout.matches ? 3 : 6;
+
+    vaseColumns.forEach((column, index) => {
+      column.hidden = index >= visibleColumnCount;
+    });
+
+    vases.forEach((vase, index) => {
+      vaseTracks[index % visibleColumnCount].appendChild(vase);
+    });
+  };
+
+  arrangeVases();
+  mobileLayout.addEventListener('change', arrangeVases);
+}
