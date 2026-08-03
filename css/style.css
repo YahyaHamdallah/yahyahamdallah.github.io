@@ -259,7 +259,15 @@ body:has(.poem-stage .flashlight-poem-body) {
 .home-page {
   display: grid;
   place-items: center;
+  aspect-ratio: auto;
   overflow: hidden;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.home-page .paper-noise {
+  display: none;
 }
 
 .stage:has(.home-page) {
