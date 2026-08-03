@@ -262,17 +262,42 @@ body:has(.poem-stage .flashlight-poem-body) {
   width: min(100%, 1040px);
 }
 
+.home-stage {
+  position: relative;
+  z-index: 1;
+}
+
+.home-vase-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.home-vase-column {
+  position: relative;
+  height: 100%;
+}
+
 .home-vase {
   position: absolute;
-  right: clamp(18px, 5vw, 58px);
-  bottom: clamp(18px, 5vw, 58px);
-  z-index: 2;
-  width: clamp(92px, 18vw, 170px);
+  top: calc(100% + 180px);
+  left: 50%;
+  width: min(80%, 150px);
   margin: 0;
-  transform: rotate(4deg);
-  filter: drop-shadow(0 18px 22px rgba(57, 42, 22, 0.22));
-  pointer-events: none;
+  filter: drop-shadow(0 10px 13px rgba(57, 42, 22, 0.16));
+  animation: vaseColumnScroll 26s linear infinite;
 }
+
+.home-vase-column:nth-child(2) .home-vase { animation-delay: -4s; }
+.home-vase-column:nth-child(3) .home-vase { animation-delay: -8s; }
+.home-vase-column:nth-child(4) .home-vase { animation-delay: -12s; }
+.home-vase-column:nth-child(5) .home-vase { animation-delay: -16s; }
+.home-vase-column:nth-child(6) .home-vase { animation-delay: -20s; }
 
 .home-vase::before {
   content: "";
@@ -363,15 +388,9 @@ body:has(.poem-stage .flashlight-poem-body) {
   }
 
   .home-page {
-    width: min(100%, 980px);
-    height: min(640px, calc(100vh - 164px));
+    width: min(100%, 820px);
+    height: min(530px, calc(100vh - 200px));
     aspect-ratio: auto;
-  }
-
-  .home-vase {
-    right: clamp(20px, 3vw, 42px);
-    bottom: clamp(14px, 2.4vw, 34px);
-    width: clamp(138px, 16vw, 210px);
   }
 
   .home-content {
@@ -2003,14 +2022,29 @@ body:has(.poem-stage .flashlight-poem-body) {
   }
 }
 
+@keyframes vaseColumnScroll {
+  from {
+    transform: translate(-50%, 0) rotate(-3deg);
+  }
+  to {
+    transform: translate(-50%, calc(-100vh - 100% - 180px)) rotate(3deg);
+  }
+}
+
 /* Reduced Motion */
 
 @media (prefers-reduced-motion: reduce) {
   .home-page .category-link,
+  .home-vase,
   .breath-page,
   .breath-word,
   .hold-poem p {
     animation: none;
+  }
+
+  .home-vase {
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .hold-poem p {
@@ -2261,10 +2295,12 @@ body:has(.poem-stage .flashlight-poem-body) {
     width: 82%;
   }
 
+  .home-vase-backdrop {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .home-vase {
-    right: 16px;
-    bottom: 14px;
-    width: clamp(78px, 24vw, 116px);
+    width: min(78%, 108px);
   }
 
   .essays-page,
