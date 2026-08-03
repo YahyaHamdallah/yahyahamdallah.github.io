@@ -305,6 +305,10 @@ body:has(.poem-stage .flashlight-poem-body) {
 .home-vase-column:nth-child(5) .home-vase-track { animation-delay: -16s; }
 .home-vase-column:nth-child(6) .home-vase-track { animation-delay: -20s; }
 
+.home-vase-column:nth-child(even) .home-vase-track {
+  animation-direction: reverse;
+}
+
 .home-vase {
   position: relative;
   flex: 0 0 auto;
