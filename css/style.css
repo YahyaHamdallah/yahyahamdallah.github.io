@@ -291,7 +291,7 @@ body:has(.poem-stage .flashlight-poem-body) {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: clamp(24px, 4vh, 56px);
+  gap: clamp(50px, 8vh, 120px);
   animation: vaseColumnScroll 26s linear infinite;
 }
 
@@ -1353,6 +1353,18 @@ body:has(.poem-stage .flashlight-poem-body) {
     max-width: none;
     min-height: 0;
     order: 2;
+  }
+
+  .poem-page.familiar-page {
+    padding-bottom: 0;
+  }
+
+  .familiar-page .poem-body {
+    padding-bottom: 0;
+  }
+
+  .familiar-page .poem .line.ending {
+    margin-bottom: 0;
   }
 
   .poem-artwork {
