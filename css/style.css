@@ -280,11 +280,18 @@ body:has(.poem-stage .flashlight-poem-body) {
 }
 
 .home-vase-backdrop {
+  --vase-columns: 6;
+  --vase-column-gap: clamp(18px, 3vw, 36px);
+  --vase-gap: 56px;
+  --vase-slot-height: 190px;
+  --vase-image-height: 150px;
   position: fixed;
   inset: 0;
   z-index: 0;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--vase-columns), minmax(0, 1fr));
+  gap: 0 var(--vase-column-gap);
+  padding-inline: clamp(10px, 2vw, 28px);
   overflow: hidden;
   pointer-events: none;
   opacity: 0.5;
@@ -297,32 +304,24 @@ body:has(.poem-stage .flashlight-poem-body) {
 
 .home-vase-track {
   position: absolute;
-  top: calc(100% + 180px);
+  top: 0;
   left: 0;
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: clamp(90px, 12vh, 180px);
-  animation: vaseColumnScroll 26s linear infinite;
-}
-
-.home-vase-column:nth-child(2) .home-vase-track { animation-delay: -4s; }
-.home-vase-column:nth-child(3) .home-vase-track { animation-delay: -8s; }
-.home-vase-column:nth-child(4) .home-vase-track { animation-delay: -12s; }
-.home-vase-column:nth-child(5) .home-vase-track { animation-delay: -16s; }
-.home-vase-column:nth-child(6) .home-vase-track { animation-delay: -20s; }
-
-.home-vase-column:nth-child(even) .home-vase-track {
-  animation-direction: reverse;
+  gap: var(--vase-gap);
+  animation: vaseCarousel 30s linear infinite;
 }
 
 .home-vase {
   position: relative;
   flex: 0 0 auto;
-  width: auto;
-  height: clamp(112px, 17vh, 170px);
-  max-width: 80%;
+  display: grid;
+  width: 100%;
+  height: var(--vase-slot-height);
+  min-height: var(--vase-slot-height);
+  place-items: center;
   margin: 0;
   filter: drop-shadow(0 10px 13px rgba(57, 42, 22, 0.16));
 }
@@ -341,8 +340,8 @@ body:has(.poem-stage .flashlight-poem-body) {
   position: relative;
   display: block;
   width: auto;
-  height: 100%;
-  max-width: 100%;
+  height: var(--vase-image-height);
+  max-width: 82%;
 }
 
 .home-content,
@@ -2064,16 +2063,16 @@ body:has(.poem-stage .flashlight-poem-body) {
   }
 }
 
-@keyframes vaseColumnScroll {
+/* Reduced Motion */
+
+@keyframes vaseCarousel {
   from {
-    transform: translateY(0) rotate(-3deg);
+    transform: translateY(0);
   }
   to {
-    transform: translateY(calc(-100vh - 100% - 180px)) rotate(3deg);
+    transform: translateY(calc(-50% - var(--vase-gap) / 2));
   }
 }
-
-/* Reduced Motion */
 
 @media (prefers-reduced-motion: reduce) {
   .home-page .category-link,
@@ -2109,10 +2108,6 @@ body:has(.poem-stage .flashlight-poem-body) {
     background: transparent;
     border: 0;
     box-shadow: none;
-  }
-
-  .home-page .paper-noise {
-    display: none;
   }
 
   body:has(.poems-index-stage) {
@@ -2353,12 +2348,12 @@ body:has(.poem-stage .flashlight-poem-body) {
   }
 
   .home-vase-backdrop {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .home-vase {
-    height: clamp(100px, 16vh, 136px);
-    max-width: 78%;
+    --vase-columns: 3;
+    --vase-column-gap: 12px;
+    --vase-gap: 42px;
+    --vase-slot-height: 142px;
+    --vase-image-height: 112px;
+    padding-inline: 8px;
   }
 
   .essays-page,

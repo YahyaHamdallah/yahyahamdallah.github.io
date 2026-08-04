@@ -227,23 +227,58 @@ if (poemEntries.length && poemLinks.length) {
 const vaseBackdrop = document.querySelector('.home-vase-backdrop');
 
 if (vaseBackdrop) {
-  const vaseColumns = Array.from(vaseBackdrop.querySelectorAll('.home-vase-column'));
-  const vaseTracks = vaseColumns.map((column) => column.querySelector('.home-vase-track'));
-  const vases = vaseTracks.flatMap((track) => Array.from(track.children));
-  const mobileLayout = window.matchMedia('(max-width: 720px)');
+  const vaseSources = (vaseBackdrop.dataset.vases || '')
+    .split(',')
+    .map((source) => source.trim())
+    .filter(Boolean)
+    .map((source) => `assets/vases/${source}`);
 
-  const arrangeVases = () => {
-    const visibleColumnCount = mobileLayout.matches ? 3 : 6;
+  const getColumnCount = () => {
+    const viewportWidth = window.innerWidth;
 
-    vaseColumns.forEach((column, index) => {
-      column.hidden = index >= visibleColumnCount;
-    });
-
-    vases.forEach((vase, index) => {
-      vaseTracks[index % visibleColumnCount].appendChild(vase);
-    });
+    if (viewportWidth <= 480) return 2;
+    if (viewportWidth <= 720) return 3;
+    if (viewportWidth <= 960) return 4;
+    return 6;
   };
 
-  arrangeVases();
-  mobileLayout.addEventListener('change', arrangeVases);
+  const buildVaseColumns = () => {
+    const columnCount = getColumnCount();
+    vaseBackdrop.style.setProperty('--vase-columns', columnCount);
+    vaseBackdrop.replaceChildren();
+
+    for (let columnIndex = 0; columnIndex < columnCount; columnIndex += 1) {
+      const column = document.createElement('div');
+      const track = document.createElement('div');
+      const columnSources = vaseSources.filter((source, index) => index % columnCount === columnIndex);
+
+      column.className = 'home-vase-column';
+      track.className = 'home-vase-track';
+      track.style.animationDirection = columnIndex % 2 ? 'reverse' : 'normal';
+      track.style.animationDuration = `${Math.max(30, columnSources.length * 4.5)}s`;
+
+      [...columnSources, ...columnSources].forEach((source) => {
+        const figure = document.createElement('figure');
+        const image = document.createElement('img');
+
+        figure.className = 'home-vase';
+        image.src = source;
+        image.alt = '';
+        figure.appendChild(image);
+        track.appendChild(figure);
+      });
+
+      column.appendChild(track);
+      vaseBackdrop.appendChild(column);
+    }
+  };
+
+  let resizeFrame;
+  const handleResize = () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(buildVaseColumns);
+  };
+
+  buildVaseColumns();
+  window.addEventListener('resize', handleResize);
 }
